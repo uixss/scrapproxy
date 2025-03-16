@@ -3,13 +3,10 @@ import threading
 import concurrent.futures
 from queue import Queue
 
-
-# Configuración inicial
 n_threads = 10
 queue = Queue()
 valid_proxies = []
 
-# Lista de URLs de donde se obtendrán los proxies
 proxy_urls = {
     "http": [
        "https://raw.githubusercontent.com/r00tee/Proxy-List/main/Https.txt",
@@ -177,31 +174,29 @@ proxy_urls = {
         "http://k2ysarchive.xyz/proxy/socks5.txt",
     ]
 }
-# Función para obtener proxies desde una URL
+
 def fetch_proxies(url):
     try:
         response = requests.get(url, timeout=5)
         if response.status_code == 200:
             return response.text.splitlines()
     except requests.RequestException:
-        pass  # Silenciar errores de conexión
+        pass  
     return []
 
-# Función para guardar proxies en archivos sin repetir
-# Función para guardar proxies en archivos sin repetir
+
 def save_proxies(proxy_type):
     proxies = set()
     for url in proxy_urls.get(proxy_type, []):
         proxies.update(fetch_proxies(url))
     
-    with open(f"{proxy_type}.txt", "w", encoding="utf-8") as f:  # <- Aquí se agrega encoding="utf-8"
+    with open(f"{proxy_type}.txt", "w", encoding="utf-8") as f:  
         for proxy in proxies:
             if proxy.strip():
                 f.write(proxy.strip() + "\n")
     print(f"✅ {len(proxies)} proxies guardados en {proxy_type}.txt")
 
 
-# Función para verificar si un proxy es válido
 def is_proxy_valid(proxy, proxy_type):
     test_url = "https://www.google.com"
     proxies = {"http": f"http://{proxy}", "https": f"https://{proxy}"}
@@ -215,7 +210,7 @@ def is_proxy_valid(proxy, proxy_type):
     except requests.RequestException:
         return False
 
-# Función para verificar proxies en la cola
+
 def checker(proxy_type, valid_proxies):
     while not queue.empty():
         proxy = queue.get()
@@ -223,12 +218,12 @@ def checker(proxy_type, valid_proxies):
             valid_proxies.add(proxy)
             print(f"✅ Proxy válido ({proxy_type}): {proxy}")
         queue.task_done()
-# Procesar cada archivo de proxies
+
 def process_proxies(proxy_type):
     valid_proxies = set()
     
     try:
-        with open(f"{proxy_type}.txt", "r", encoding="utf-8") as f:  # <- Aquí se agrega encoding="utf-8"
+        with open(f"{proxy_type}.txt", "r", encoding="utf-8") as f:  
             proxies = set(f.read().splitlines())
     except FileNotFoundError:
         print(f"⚠️ No se encontró {proxy_type}.txt")
@@ -241,17 +236,15 @@ def process_proxies(proxy_type):
         futures = [executor.submit(checker, proxy_type, valid_proxies) for _ in range(n_threads)]
         concurrent.futures.wait(futures)
     
-    with open(f"valid_{proxy_type}.txt", "w", encoding="utf-8") as f:  # <- Aquí se agrega encoding="utf-8"
+    with open(f"valid_{proxy_type}.txt", "w", encoding="utf-8") as f:  
         for proxy in valid_proxies:
             f.write(proxy + "\n")
     
     print(f"✅ Proxies válidos ({proxy_type}): {len(valid_proxies)} guardados en valid_{proxy_type}.txt")
 
-# Guardar proxies en archivos
 for proxy_type in ["http", "socks4", "socks5"]:
     save_proxies(proxy_type)
 
-# Procesar cada archivo
 for proxy_type in ["http", "socks4", "socks5"]:
     print(f"\n🚀 Iniciando validación de proxies de tipo {proxy_type.upper()}")
     process_proxies(proxy_type)
