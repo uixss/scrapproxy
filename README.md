@@ -1,4 +1,4 @@
-´
+```python
 proxy_urls = {
     "http": [
        "https://raw.githubusercontent.com/r00tee/Proxy-List/main/Https.txt",
@@ -167,4 +167,4 @@ proxy_urls = {
     ]
 }
 
-´
+```
