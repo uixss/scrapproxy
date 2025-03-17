@@ -249,7 +249,7 @@ class ProxyScraper:
 
     async def check_proxies(self):
         valid_proxies = set()
-        semaphore = asyncio.Semaphore(500) 
+        semaphore = asyncio.Semaphore(500)  
         async def validate(proxy_type, proxy):
             async with semaphore:
                 async with aiohttp.ClientSession() as session:
@@ -258,16 +258,15 @@ class ProxyScraper:
                         valid_proxies.add((proxy_type, proxy))
                         print(f"✅ Proxy válido ({proxy_type}): {proxy}")
 
+                        with open("vproxies.txt", "a") as f:
+                            f.write(f"{proxy_type}://{proxy}\n")
+
         tasks = [validate(proxy_type, proxy) for proxy_type, proxy in self.proxies]
         await asyncio.gather(*tasks)
 
-        with open("valid_proxies.txt", "w") as f:
-            for proxy_type, proxy in valid_proxies:
-                f.write(f"{proxy_type}://{proxy}\n")
-
         self.proxies = list(valid_proxies)
         print(f"✅ Total proxies válidos: {len(self.proxies)}")
-        print("✅ Proxies válidos guardados en 'valid_proxies.txt'")
+
 
 
 if __name__ == "__main__":
