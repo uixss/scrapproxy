@@ -1,5 +1,5 @@
 ```python
-proxy_urls =          {
+proxy_urls = {
     "http": [
         "https://api.proxyscrape.com/?request=displayproxies&proxytype=http",
         "https://api.proxyscrape.com/?request=displayproxies&proxytype=",
@@ -24,7 +24,42 @@ proxy_urls =          {
         "https://raw.githubusercontent.com/opsxcq/proxy-list/master/list.txt",
         "https://proxy-spider.com/api/proxies.example.txt",
         "https://proxyspace.pro/http.txt",
-        "https://proxyspace.pro/https.txt"
+        "https://proxyspace.pro/https.txt",
+        "https://raw.githubusercontent.com/B4RC0DE-TM/proxy-list/main/HTTP.txt",
+        "https://raw.githubusercontent.com/saschazesiger/Free-Proxies/master/proxies/http.txt",
+        "https://raw.githubusercontent.com/HyperBeats/proxy-list/main/http.txt",
+        "https://raw.githubusercontent.com/HyperBeats/proxy-list/main/https.txt",
+        "https://raw.githubusercontent.com/mmpx12/proxy-list/master/http.txt",
+        "http://alexa.lr2b.com/proxylist.txt",
+        "https://multiproxy.org/txt_all/proxy.txt",
+        "http://proxysearcher.sourceforge.net/Proxy%20List.php?type=http",
+        "https://raw.githubusercontent.com/RX4096/proxy-list/main/online/all.txt",
+        "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt",
+        "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies_anonymous/http.txt",
+        "https://raw.githubusercontent.com/roosterkid/openproxylist/main/HTTPS_RAW.txt",
+        "https://raw.githubusercontent.com/UserR3X/proxy-list/main/online/https.txt",
+        "https://raw.githubusercontent.com/BlackSnowDot/proxylist-update-every-minute/main/https.txt",
+        "https://raw.githubusercontent.com/BlackSnowDot/proxylist-update-every-minute/main/http.txt",
+        "https://raw.githubusercontent.com/proxy4parsing/proxy-list/main/http.txt",
+        "http://rootjazz.com/proxies/proxies.txt",
+        "http://spys.me/proxy.txt",
+        "https://sheesh.rip/http.txt",
+        "http://worm.rip/http.txt",
+        "http://www.proxyserverlist24.top/feeds/posts/default",
+        "https://www.proxyscan.io/download?type=http",
+        "https://www.my-proxy.com/free-anonymous-proxy.html",
+        "https://www.my-proxy.com/free-transparent-proxy.html",
+        "https://www.my-proxy.com/free-proxy-list.html",
+        "https://www.my-proxy.com/free-proxy-list-2.html",
+        "https://www.my-proxy.com/free-proxy-list-3.html",
+        "https://www.my-proxy.com/free-proxy-list-4.html",
+        "https://www.my-proxy.com/free-proxy-list-5.html",
+        "https://www.my-proxy.com/free-proxy-list-6.html",
+        "https://www.my-proxy.com/free-proxy-list-7.html",
+        "https://www.my-proxy.com/free-proxy-list-8.html",
+        "https://www.my-proxy.com/free-proxy-list-9.html",
+        "https://www.my-proxy.com/free-proxy-list-10.html",
+        "https://www.freeproxychecker.com/result/http_proxies.txt"
     ],
     "socks4": [
         "https://api.proxyscrape.com/?request=displayproxies&proxytype=socks4",
@@ -63,7 +98,17 @@ proxy_urls =          {
         "https://raw.githubusercontent.com/Tsprnay/Proxy-lists/master/proxies/socks4.txt",
         "https://raw.githubusercontent.com/mmpx12/proxy-list/master/socks4.txt",
         "https://raw.githubusercontent.com/MuRongPIG/Proxy-Master/main/socks4.txt",
-        "https://raw.githubusercontent.com/ALIILAPRO/Proxy/main/socks4.txt"
+        "https://raw.githubusercontent.com/ALIILAPRO/Proxy/main/socks4.txt",
+        "https://api.proxyscrape.com/?request=displayproxies&proxytype=socks4&country=all",
+        "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies_anonymous/socks4.txt",
+        "http://worm.rip/socks4.txt",
+        "https://www.proxyscan.io/download?type=socks4",
+        "https://www.my-proxy.com/free-socks-4-proxy.html",
+        "http://www.socks24.org/feeds/posts/default",
+        "https://www.freeproxychecker.com/result/socks4_proxies.txt",
+        "https://raw.githubusercontent.com/HyperBeats/proxy-list/main/socks4.txt",
+        "https://raw.githubusercontent.com/saschazesiger/Free-Proxies/master/proxies/socks4.txt",
+        "https://raw.githubusercontent.com/B4RC0DE-TM/proxy-list/main/SOCKS4.txt"
     ],
     "socks5": [
         "https://api.proxyscrape.com/?request=displayproxies&proxytype=socks5",
@@ -98,12 +143,21 @@ proxy_urls =          {
         "https://raw.githubusercontent.com/MuRongPIG/Proxy-Master/main/socks5.txt",
         "https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks5",
         "https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks5.txt",
-        "https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-socks5.txt",
         "https://raw.githubusercontent.com/roosterkid/openproxylist/main/SOCKS5_RAW.txt",
-        "https://api.openproxylist.xyz/socks5.txt",
         "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt",
         "https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks5.txt",
-        "https://raw.githubusercontent.com/hookzof/socks5_list/master/proxy.txt"
+        "https://raw.githubusercontent.com/B4RC0DE-TM/proxy-list/main/SOCKS5.txt",
+        "https://raw.githubusercontent.com/saschazesiger/Free-Proxies/master/proxies/socks5.txt",
+        "https://raw.githubusercontent.com/mmpx12/proxy-list/master/socks5.txt",
+        "https://raw.githubusercontent.com/HyperBeats/proxy-list/main/socks5.txt",
+        "https://api.proxyscrape.com/v2/?request=getproxies&protocol=socks5&timeout=10000&country=all&simplified=true",
+        "https://raw.githubusercontent.com/manuGMG/proxy-365/main/SOCKS5.txt",
+        "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies_anonymous/socks5.txt",
+        "https://raw.githubusercontent.com/BlackSnowDot/proxylist-update-every-minute/main/socks.txt",
+        "http://worm.rip/socks5.txt",
+        "http://www.socks24.org/feeds/posts/default",
+        "https://www.freeproxychecker.com/result/socks5_proxies.txt",
+        "https://www.proxyscan.io/download?type=socks5"
     ]
 }
 ```
